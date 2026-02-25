@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Resume Analyst Overview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <text x="70" y="95" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700">Local RAG with Ollama</text>
+  <text x="70" y="140" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="24">Resume Analyst + Multi-Model Chatbot</text>
+
+  <rect x="70" y="190" rx="18" ry="18" width="540" height="450" fill="url(#card)" stroke="#334155"/>
+  <text x="100" y="240" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Resume Analyst</text>
+  <text x="100" y="285" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• ATS Compatibility Checks</text>
+  <text x="100" y="325" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Skill Gap + Keyword Analysis</text>
+  <text x="100" y="365" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Revised Resume Draft</text>
+  <text x="100" y="405" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Improvement Action Plan</text>
+  <text x="100" y="445" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Professional Report Export</text>
+  <text x="100" y="495" fill="#22d3ee" font-family="Segoe UI, Arial, sans-serif" font-size="20">Schema Validation + Quality Guard + Fallback</text>
+
+  <rect x="670" y="190" rx="18" ry="18" width="540" height="210" fill="url(#card)" stroke="#334155"/>
+  <text x="700" y="240" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">RAG Chat</text>
+  <text x="700" y="285" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Fast vectorized local retrieval</text>
+  <text x="700" y="325" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Optional live fallback</text>
+  <text x="700" y="365" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Multi-model response generation</text>
+
+  <rect x="670" y="430" rx="18" ry="18" width="540" height="210" fill="url(#card)" stroke="#334155"/>
+  <text x="700" y="480" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Ops & Reliability</text>
+  <text x="700" y="525" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Confidence + evidence fields</text>
+  <text x="700" y="565" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Evaluation logs (JSONL)</text>
+  <text x="700" y="605" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Retry/repair + backup model</text>
+</svg>
