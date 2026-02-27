@@ -5,6 +5,7 @@ A production-oriented local RAG application built with Streamlit, Ollama, and La
 It includes:
 - A multi-model RAG chatbot (local chunks + optional live fallback)
 - A Resume Analyst mode with ATS checks, skill-gap analysis, keyword optimization, revision drafting, and professional report export
+- A free ATS template library (Jobscan, My Resume Templates, resume-llm/resume-ai, resume-lm references) with structure validation
 - Structured JSON outputs for frontend integration
 
 ![Project Overview](assets/resume-analyst-overview.svg)
@@ -19,6 +20,8 @@ It includes:
 - Quality guard against empty/low-value model responses
 - Confidence and evidence fields in analysis outputs
 - Professional report tab + downloadable markdown report
+- Template profile selector + ATS structure validator for generated templates
+- Optional real-time context via Google Custom Search API + configurable Naukri API endpoint
 - Evaluation logging for analysis/revision runs
 
 ## Tech Stack
@@ -60,6 +63,20 @@ Open:
 
 `http://localhost:8501`
 
+## Optional Real-time APIs (Resume Analyst)
+
+Add these to `.env` if you want live market/job signals during analysis:
+
+```env
+GOOGLE_API_KEY="..."
+GOOGLE_CSE_ID="..."
+NAUKRI_API_URL="https://<your-naukri-endpoint>"
+NAUKRI_API_KEY="..."
+NAUKRI_APP_ID="..."
+```
+
+Then enable **Use Naukri + Google real-time API context** in Resume Analyst mode.
+
 ## Resume Analyst Workflow
 
 1. Switch sidebar mode to **Resume Analyst**
@@ -71,6 +88,7 @@ Open:
    - Revised Resume
    - Improvement Plan
    - Professional Report
+   - ATS Template Library + compliance checks
 
 ## Project Structure
 

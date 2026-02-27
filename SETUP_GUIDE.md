@@ -44,6 +44,17 @@ ollama pull qwen3:4b
 ```bash
 # Edit .env file with your settings
 # Make sure BRIGHTDATA_API_KEY is set if using Bright Data
+# Optional for live resume market signals:
+# GOOGLE_API_KEY, GOOGLE_CSE_ID, NAUKRI_API_URL, NAUKRI_API_KEY
+```
+
+Example optional keys:
+```env
+GOOGLE_API_KEY="..."
+GOOGLE_CSE_ID="..."
+NAUKRI_API_URL="https://<your-naukri-endpoint>"
+NAUKRI_API_KEY="..."
+NAUKRI_APP_ID="..."
 ```
 
 ---
