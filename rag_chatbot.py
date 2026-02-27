@@ -845,11 +845,13 @@ Re-generate strictly valid JSON now."""
     
     def generate_response(self, query, context):
         """Generate response"""
+        compact_context = self._compact_text(context or "", 3200 if self.fast_mode else 7000)
+
         if context:
             prompt = f"""You are a helpful assistant. Use context and respond clearly in concise form.
 
 Context:
-{context}
+{compact_context}
 
 Question: {query}
 
@@ -873,8 +875,23 @@ Response:"""
         try:
             response = self._invoke_with_timeout(self.llm, prompt, chat_timeout)
             return getattr(response, "content", "") or "I couldn't generate a full answer right now. Please retry."
-        except Exception:
-            return "The model took too long to respond. Try again, switch to a lighter model, or keep Fast Mode on."
+        except Exception as primary_err:
+            try:
+                backup_model_name = self._get_backup_model_name()
+                backup_llm = self._create_llm(backup_model_name)
+                retry_timeout = max(chat_timeout, 12)
+                retry_response = self._invoke_with_timeout(backup_llm, prompt, retry_timeout)
+                retry_text = getattr(retry_response, "content", "")
+                if retry_text:
+                    return retry_text
+            except Exception:
+                pass
+
+            return (
+                "The model took too long to respond. "
+                f"Primary model error: {primary_err}. "
+                "Try again, switch to a lighter model, or keep Fast Mode on."
+            )
 
     def _safe_json_parse(self, raw_text):
         """Parse JSON from model output safely"""
